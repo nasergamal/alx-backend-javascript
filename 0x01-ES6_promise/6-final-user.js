@@ -6,12 +6,10 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     .then((results) => {
       const result = [];
       for (const i of results) {
-        const dict = { status: i.status };
         if (i.status === 'rejected') {
-          dict.value = i.reason.message;
+          result.push({ status: i.status, value: i.reason.message });
         } else {
-          dict.value = i.value;
-          result.push(dict);
+          result.push({ status: i.status, value: i.value });
         }
       }
       return result;
