@@ -14,7 +14,7 @@ export default class EVCar extends Car {
     this._range = range;
   }
 
-  cloneCar() {
+  cloneCar() { // eslint-disable-line class-methods-use-this
     return new Car();
   }
 }
