@@ -1,0 +1,23 @@
+interface Student {
+  firstName: string;
+  lastName: string;
+  age: number;
+  location: string;
+}
+const student1: Student {
+  firstName: "Jack",
+  lastName: "Sparrow",
+  age: 25,
+  location: "the Caribbean sea",
+}
+
+const student2: Student {
+  firstName: 'Gehrman',
+  lastName: 'Sparrow',
+  age: 23,
+  location: 'Berserk sea',
+}
+
+const studentsList: array<Student> = [student1, student2]
+
+const table = document.createElement('table');
