@@ -5,7 +5,6 @@ class StudentsController {
     response.status(200);
     readDatabase(process.argv[2]).then((fields) => {
       let output = 'This is the list of our students\n';
-      output += `Number of students: ${Object.values(fields).flat(1).length}\n`;
       for (const [field, students] of Object.entries(fields)) {
         output += `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}\n`;
       }
