@@ -22,6 +22,10 @@ describe('express', () => {
   it('GET /cart/id status_code', (done) => {
     http.get('http://127.0.0.1:7865/cart/25', (res) => {
       expect(res.statusCode).to.equal(200);
+      res.setEncoding('utf-8');
+        res.on('data', (data) => {
+          expect(data).to.equal('Payment methods for cart 25');
+        });
       done();
     });
   });
